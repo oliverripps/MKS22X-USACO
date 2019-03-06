@@ -10,14 +10,15 @@ public class USACO{
       File problem = new File(filename);
       Scanner comp = new Scanner(problem);
     }
-    else{
+    catch(FileNotFoundException e){
       System.out.println("File Not Found:" + filename);
     }
 
+    return 0;
   }
 
   public static int silver(String filename){
-
+    return 0;
   }
 
 
