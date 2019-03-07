@@ -34,17 +34,21 @@ public class USACO{
       int m = Integer.parseInt(eachnum.get(1));
       int t = Integer.parseInt(eachnum.get(2));
       int[][] nums= new int[n][m];
-      int[][] doc = new int[n][m];
-      for(int i =0;i<doc.length();i++){
+      char[][] doc = new char[n][m];
+      for(int i =0;i<doc.length;i++){
         str=comp.nextLine();
-        for(int l=0;l<doc[0].length();l++){
-          doc[i][l]=str.substring(l);
+        for(int l=0;l<doc[0].length;l++){
+          doc[i][l]=str.charAt(l);
         }
       }
-      for(int i =0;i<doc.length();i++){
-        str=comp.nextLine();
-        for(int l=0;l<doc[0].length();l++){
-          doc[i][l]=str.substring(l);
+      for(int i =0;i<doc.length;i++){
+        for(int l=0;l<doc[0].length;l++){
+          if(doc[i][l]=='.'){
+            nums[i][l]=0;
+          }
+          else{
+            nums[i][l]=-1;
+          }
         }
       }
 
