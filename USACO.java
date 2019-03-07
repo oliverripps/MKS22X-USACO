@@ -32,7 +32,7 @@ public class USACO{
       List<String> eachnum = Arrays.asList(str.split(" "));
       int n = Integer.parseInt(eachnum.get(0));
       int m = Integer.parseInt(eachnum.get(1));
-      int t = Integer.parseInt(eachnum.get(2));
+      int time = Integer.parseInt(eachnum.get(2));
       int[][] nums= new int[n][m];
       char[][] doc = new char[n][m];
       for(int i =0;i<doc.length;i++){
@@ -41,6 +41,7 @@ public class USACO{
           doc[i][l]=str.charAt(l);
         }
       }
+
       for(int i =0;i<doc.length;i++){
         for(int l=0;l<doc[0].length;l++){
           if(doc[i][l]=='.'){
@@ -51,6 +52,36 @@ public class USACO{
           }
         }
       }
+
+      for(int t =0;t<time;t++){
+        int[][] curr = new int[n][m];
+        curr = nums;
+        for(int i=0;i<nums.length;i++){
+          for(int l=0;l<nums[0].length;l++){
+            if(nums[i][l]>0){
+              if(curr[i+1][l]>=0){
+                curr[i+1][l]+=nums[i][l];
+              }
+              if(curr[i-1][l]>=0){
+                curr[i-1][l]+=nums[i][l];
+              }
+              if(curr[i][l+1]>=0){
+                curr[i][l+1]+=nums[i][l];
+              }
+              if(curr[i][l-1]>=0){
+                curr[i][l-1]+=nums[i][l];
+              }
+            }n
+          }
+        }
+        nums=curr;
+      }
+      str=comp.nextLine();
+      List<String> eachcoord = Arrays.asList(str.split(" "));
+      int xstart
+      int xend
+      int ystart
+      int yend
 
 
     }
