@@ -9,12 +9,18 @@ public class USACO{
       String str="";
       File problem = new File(filename);
       Scanner comp = new Scanner(problem);
-      str+=comp.nextLine();
-      List<String> eachnum = Arrays.asList(str.split(" "));
-      int r = Integer.parseInt(eachnum.get(0));
-      int c = Integer.parseInt(eachnum.get(1));
-      int e = Integer.parseInt(eachnum.get(2));
-      int n = Integer.parseInt(eachnum.get(3));
+      int R;
+      int C;
+      int E;
+      int N;
+      int[] assign = new int[4];
+      for(int i = 0; i < 4; i++){
+        assign[i] = Integer.parseInt(input.next());
+    }
+      R = assign[0];
+      C = assign[1];
+      E = assign[2];
+      N = asign[3];
     }
     catch(FileNotFoundException e){
       System.out.println("File Not Found:" + filename);
