@@ -14,7 +14,7 @@ public class USACO{
       int E;
       int N;
       int[] assign = new int[4];
-      for(int i = 0; i < 4; i++){
+      for(int i=0; i<4;i++){
         assign[i] = Integer.parseInt(input.next());
     }
       R = assign[0];
@@ -25,7 +25,12 @@ public class USACO{
     catch(FileNotFoundException e){
       System.out.println("File Not Found:" + filename);
     }
-
+    int[][] board=new int[R][C]
+    for (int i=0;i<R;i++){
+      for (int l=0;l< C;l++){
+        board[i]l=Integer.parseInt(input.next());
+      }
+    }
     return 0;
   }
 
