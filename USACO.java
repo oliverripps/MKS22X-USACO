@@ -15,7 +15,7 @@ public class USACO{
       int N;
       int[] assign = new int[4];
       for(int i=0; i<4;i++){
-        assign[i] = Integer.parseInt(input.next());
+        assign[i] = Integer.parseInt(comp.next());
     }
       R = assign[0];
       C = assign[1];
@@ -31,6 +31,22 @@ public class USACO{
         board[i]l=Integer.parseInt(input.next());
       }
     }
+    int m=0;
+    while(m<N){
+      int row=Integer.parseInt(comp.next())-1;
+      int col=Integer.parseInt(comp.next())-1;
+      int stomp=Integer.parseInt(comp.next());
+      int max=0;
+      for(int r=0;r<row+3;r++){
+        for(int c=0;c<col+3:c++){
+          if(board[r][c]>max){
+            max=board[r][c];
+          }
+        }
+      }
+      m++;
+    }
+    
     return 0;
   }
 
