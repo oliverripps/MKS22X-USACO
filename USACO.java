@@ -55,8 +55,17 @@ public class USACO{
     }
     m++;
   }
+    for(int r=0;r<R;r++){
+      for (int c=0;c<C;c++){
+        int curr=board[row][col];
+      if(E-curr>0){
+        total += E-curr;
+      }
+    }
+  }
 
-  
+  total=total*72*72;
+  return total;
   }
 
   public static int silver(String filename){
