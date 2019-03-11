@@ -88,6 +88,8 @@ public class USACO{
       int sC = Integer.parseInt(comp.next()) - 1;
       int eR = Integer.parseInt(comp.next()) - 1;
       int eC = Integer.parseInt(comp.next()) - 1;
+
+      int[][] moves = {{1, 0},{-1, 0},{0, 1},{0, -1}};
       
       for(int i =0;i<doc.length;i++){
         for(int l=0;l<doc[0].length;l++){
