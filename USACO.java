@@ -4,8 +4,8 @@ import java.io.*;
 public class USACO{
 
 
-  public static int bronze(String filename){
-    try{
+  public static int bronze(String filename) throws FileNotFoundException{
+
       String str="";
       File problem = new File(filename);
       Scanner comp = new Scanner(problem);
@@ -26,7 +26,7 @@ public class USACO{
     int[][] board=new int[R][C];
     for (int i=0;i<R;i++){
       for (int l=0;l< C;l++){
-        board[i]l=Integer.parseInt(comp.next());
+        board[i][l]=Integer.parseInt(comp.next());
       }
     }
     int m=0;
@@ -45,7 +45,7 @@ public class USACO{
 
     for(int r=0;r<row+3;r++){
       for(int c=0;c<col+3;c++){
-        int delta=maxV-board[r][c];
+        int delta=max-board[r][c];
         if(delta<stomp){
           board[r][c]=max-stomp;
         }
@@ -55,7 +55,7 @@ public class USACO{
   }
     for(int r=0;r<R;r++){
       for (int c=0;c<C;c++){
-        int curr=board[row][col];
+        int curr=board[r][c];
       if(E-curr>0){
         total += E-curr;
       }
@@ -65,10 +65,7 @@ public class USACO{
   total=total*72*72;
   return total;
 }
-  catch(FileNotFoundException e){
-    System.out.println("File Not Found:" + filename);
-  }
-  }
+  
 
 /*
   public static int silver(String filename){
