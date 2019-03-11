@@ -85,7 +85,6 @@ public class USACO{
           ch=x.charAt(l);
           if(ch=='.'){
             doc[i][l]=0;
-          //System.out.println(doc[i][l]);
         }
           if(ch=='*'){
             doc[i][l]=-1;
@@ -107,7 +106,7 @@ public class USACO{
       }
 
       return doc[eR][eC];
-    
+
 
   }
   public static int[][] move(int[][] nums){
@@ -119,12 +118,12 @@ public class USACO{
       for (int j=0;j<m;j++){
         if(nums[i][j]==-1){
           sums[i][j]=-1;
-        }
+}
         else{
         int nextTo=0;
         for (int l=0; l< 4; l++){
           int r = i + moves[l][0];
-          int c = l + moves[l][1];
+          int c = j + moves[l][1];
           if (r >= 0 && r <n && c >= 0 && c < m && nums[r][c] != -1){
             nextTo+=nums[r][c];
           }
@@ -136,3 +135,6 @@ public class USACO{
   return sums;
 }
   }
+
+  //I SPENT HOURS TRYING TO FIGURE OUT SILVER. MOHHAMAD JAWWAD HELPED ME WORK THROUGH MY CODE AND UNDERSTAND MY  LOGICAL
+  //MISTAKES AS WELL AS FOUND STUPID  VARIABLE ERRORS...FULL CREDIT TO  HIM FOR HIS HELP
