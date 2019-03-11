@@ -13,6 +13,7 @@ public class USACO{
       int C;
       int E;
       int N;
+      int total=0;
       int[] assign = new int[4];
       for(int i=0; i<4;i++){
         assign[i] = Integer.parseInt(comp.next());
@@ -21,10 +22,7 @@ public class USACO{
       C = assign[1];
       E = assign[2];
       N = asign[3];
-    }
-    catch(FileNotFoundException e){
-      System.out.println("File Not Found:" + filename);
-    }
+
     int[][] board=new int[R][C]
     for (int i=0;i<R;i++){
       for (int l=0;l< C;l++){
@@ -66,6 +64,10 @@ public class USACO{
 
   total=total*72*72;
   return total;
+}
+  catch(FileNotFoundException e){
+    System.out.println("File Not Found:" + filename);
+  }
   }
 
   public static int silver(String filename){
