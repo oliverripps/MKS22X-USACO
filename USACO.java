@@ -77,6 +77,7 @@ public class USACO{
       int m=Integer.parseInt(comp.next());
       int t=Integer.parseInt(comp.next());
       int[][] nums= new int[n][m];
+      int[][] sums=new int[n][m];
       char[][] doc = new char[n][m];
       for(int i =0;i<doc.length;i++){
         str=comp.nextLine();
@@ -90,47 +91,17 @@ public class USACO{
       int eC = Integer.parseInt(comp.next()) - 1;
 
       int[][] moves = {{1, 0},{-1, 0},{0, 1},{0, -1}};
-      
-      for(int i =0;i<doc.length;i++){
-        for(int l=0;l<doc[0].length;l++){
-          if(doc[i][l]=='.'){
-            nums[i][l]=0;
-          }
-          else{
-            nums[i][l]=-1;
-          }
+
+      for(int i=0;i<4;i++){
+        int r= sR+moves[i][0];
+        int c=sC+moves[i][1];
+        if(r>=0 && r< n && c>=0 && c<m && doc[r][c]!='.'){
+          nums[r][c]=1;
+          sums[r][c]=1;
         }
       }
 
-      for(int t =0;t<time;t++){
-        int[][] curr = new int[n][m];
-        curr = nums;
-        for(int i=0;i<nums.length;i++){
-          for(int l=0;l<nums[0].length;l++){
-            if(nums[i][l]>0){
-              if(curr[i+1][l]>=0){
-                curr[i+1][l]+=nums[i][l];
-              }
-              if(curr[i-1][l]>=0){
-                curr[i-1][l]+=nums[i][l];
-              }
-              if(curr[i][l+1]>=0){
-                curr[i][l+1]+=nums[i][l];
-              }
-              if(curr[i][l-1]>=0){
-                curr[i][l-1]+=nums[i][l];
-              }
-            }n
-          }
-        }
-        nums=curr;
-      }
-      str=comp.nextLine();
-      List<String> eachcoord = Arrays.asList(str.split(" "));
-      int xstart
-      int xend
-      int ystart
-      int yend
+
 
 
     }
