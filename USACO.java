@@ -70,26 +70,29 @@ public class USACO{
 
   public static int silver(String filename) throws FileNotFoundException{
     try{
-
+      //System.out.println(filename);
       File f = new File(filename);
       Scanner s = new Scanner(f);
       String str=s.nextLine();
-      int n=s.nextInt();
-      int m=s.nextInt();
-      int t=s.nextInt();
-      int[][] nums= new int[n][m];
-      int[][] sums=new int[n][m];
+      System.out.println(str);
+      List<String> eachnum = Arrays.asList(str.split(" "));
+      int n = Integer.parseInt(eachnum.get(0));
+      int m = Integer.parseInt(eachnum.get(1));
+      int t = Integer.parseInt(eachnum.get(2));
       char[][] doc = new char[n][m];
       for(int i =0;i<n;i++){
-        String x =s.next();
-        System.out.println(n);
+        String x = s.nextLine();
+        /*System.out.println(n);
         System.out.println(m);
         System.out.println(t);
-        System.out.println(x);
+        System.out.println(x);*/
         for(int l=0;l<m;l++){
           doc[i][l]=x.charAt(l);
         }
       }
+      int[][] nums= new int[n][m];
+      int[][] sums= new int[n][m];
+
       int sR = Integer.parseInt(s.next()) - 1;
       int sC = Integer.parseInt(s.next()) - 1;
       int eR = Integer.parseInt(s.next()) - 1;
