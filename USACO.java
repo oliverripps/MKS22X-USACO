@@ -80,7 +80,7 @@ public class USACO{
       int[][] sums=new int[n][m];
       char[][] doc = new char[n][m];
       for(int i =0;i<doc.length;i++){
-        str=comp.nextLine();
+        str=comp.next();
         for(int l=0;l<doc[0].length;l++){
           doc[i][l]=str.charAt(l);
         }
@@ -119,12 +119,12 @@ public class USACO{
         }
       for(int i=0; i<n;i++){
           for (int l=0; l < m; l++){
-            doc[i][l] = sums[i][l];
+            nums[i][l] = sums[i][l];
           }
         }
         t--;
       }
-      return doc[eR][eC];
+      return nums[eR][eC];
     }
     catch(FileNotFoundException e){
       System.out.println("File Not Found:" + filename);
