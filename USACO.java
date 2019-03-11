@@ -107,7 +107,7 @@ public class USACO{
           sums[r][c]=1;
         }
       }
-
+      System.out.println("hi");
       while(t > 1){
         for(int i=0;i<n;i++){
           for (int j=0;j<m;j++){
@@ -120,7 +120,7 @@ public class USACO{
               }
             }
             if (doc[i][j] != '*'){
-              sums[i][j]+= nextTo;
+              sums[i][j]= nextTo;
             }
           }
         }
