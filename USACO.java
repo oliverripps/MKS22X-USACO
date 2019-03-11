@@ -38,16 +38,25 @@ public class USACO{
       int stomp=Integer.parseInt(comp.next());
       int max=0;
       for(int r=0;r<row+3;r++){
-        for(int c=0;c<col+3:c++){
+        for(int c=0;c<col+3;c++){
           if(board[r][c]>max){
             max=board[r][c];
           }
         }
       }
-      m++;
+
+    for(int r=0;r<row+3;r++){
+      for(int c=0;c<col+3;c++){
+        int delta=maxV-board[r][c];
+        if(delta<stomp){
+          board[r][c]=max-stomp;
+        }
+      }
     }
-    
-    return 0;
+    m++;
+  }
+
+  
   }
 
   public static int silver(String filename){
