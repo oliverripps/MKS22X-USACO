@@ -65,19 +65,17 @@ public class USACO{
   total=total*72*72;
   return total;
 }
-  
 
-/*
+
+
   public static int silver(String filename){
     try{
       String str="";
       File problem = new File(filename);
       Scanner comp = new Scanner(problem);
-      str+=comp.nextLine();
-      List<String> eachnum = Arrays.asList(str.split(" "));
-      int n = Integer.parseInt(eachnum.get(0));
-      int m = Integer.parseInt(eachnum.get(1));
-      int time = Integer.parseInt(eachnum.get(2));
+      int n=Integer.parseInt(comp.next());
+      int m=Integer.parseInt(comp.next());
+      int t=Integer.parseInt(comp.next());
       int[][] nums= new int[n][m];
       char[][] doc = new char[n][m];
       for(int i =0;i<doc.length;i++){
@@ -86,7 +84,11 @@ public class USACO{
           doc[i][l]=str.charAt(l);
         }
       }
-
+      int sR = Integer.parseInt(comp.next()) - 1;
+      int sC = Integer.parseInt(comp.next()) - 1;
+      int eR = Integer.parseInt(comp.next()) - 1;
+      int eC = Integer.parseInt(comp.next()) - 1;
+      
       for(int i =0;i<doc.length;i++){
         for(int l=0;l<doc[0].length;l++){
           if(doc[i][l]=='.'){
