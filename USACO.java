@@ -100,12 +100,11 @@ public class USACO{
       int[][] nums= new int[n][m];
       int[][] sums= new int[n][m];
 
-      int sR = Integer.parseInt(s.next()) - 1;
-      int sC = Integer.parseInt(s.next()) - 1;
-      int eR = Integer.parseInt(s.next()) - 1;
-      int eC = Integer.parseInt(s.next()) - 1;
-
-      int[][] moves = {{1, 0},{-1, 0},{0, 1},{0, -1}};
+      int sR = Integer.parseInt(s.next())-1;
+      int sC = Integer.parseInt(s.next())-1 ;
+      int eR = Integer.parseInt(s.next()) -1;
+      int eC = Integer.parseInt(s.next())-1;
+      doc[sR][sC]=1;
 
       for(int i=0;i<4;i++){
         int r= sR+moves[i][0];
@@ -117,21 +116,7 @@ public class USACO{
       }
       //System.out.println("hi");
       while(t > 1){
-        for(int i=0;i<n;i++){
-          for (int j=0;j<m;j++){
-            int nextTo=0;
-            for (int l=0; l< 4; l++){
-              int r = i + moves[l][0];
-              int c = l + moves[l][1];
-              if (r >= 0 && r < n && c >= 0 && c < m && doc[r][c] != -1){
-                nextTo+=doc[r][c];
-              }
-            }
-            if (doc[i][j] != '*'){
-              sums[i][j]= nextTo;
-            }
-          }
-        }
+        move(nums);
       for(int i=0; i<n;i++){
           for (int l=0; l < m; l++){
             nums[i][l] = sums[i][l];
@@ -139,7 +124,7 @@ public class USACO{
         }
         t--;
       }
-      return nums[eR][eC];
+      return sums[eR][eC];
     }
     catch(FileNotFoundException e){
       System.out.println("File Not Found:" + filename);
@@ -147,6 +132,33 @@ public class USACO{
 
     return -1;
   }
+  public static int[][] move(int[][] nums){
+    int[][] moves = {{1, 0},{-1, 0},{0, 1},{0, -1}};
+    int n =nums.length;
+    int m = nums[0].length;
+    int[][] sums=new int[n][m];
+    for(int i=0;i<n;i++){
+      for (int j=0;j<m;j++){
+        if(nums[i][j]==-1){
+          sums[i][j]=-1
+        }
+        else{
+        int nextTo=0;
+        for (int l=0; l< 4; l++){
+          int r = i + moves[l][0];
+          int c = l + moves[l][1];
+          if (r >= 0 && r <n && c >= 0 && c < m && nums[r][c] != -1){
+            nextTo+=sums[r][c];
+          }
+        }
+        sums[i][j]=nextTo;
+      }
+    }
+  }
+  return sums;
+}
+  }
+
 
 
 
