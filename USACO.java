@@ -35,16 +35,16 @@ public class USACO{
       int col=Integer.parseInt(comp.next())-1;
       int stomp=Integer.parseInt(comp.next());
       int max=0;
-      for(int r=0;r<row+3;r++){
-        for(int c=0;c<col+3;c++){
+      for(int r=row;r<row+3;r++){
+        for(int c=col;c<col+3;c++){
           if(board[r][c]>max){
             max=board[r][c];
           }
         }
       }
 
-    for(int r=0;r<row+3;r++){
-      for(int c=0;c<col+3;c++){
+    for(int r=row;r<row+3;r++){
+      for(int c=col;c<col+3;c++){
         int delta=max-board[r][c];
         if(delta<stomp){
           board[r][c]=max-stomp;
@@ -68,27 +68,32 @@ public class USACO{
 
 
 
-  public static int silver(String filename){
+  public static int silver(String filename) throws FileNotFoundException{
     try{
-      String str="";
-      File problem = new File(filename);
-      Scanner comp = new Scanner(problem);
-      int n=Integer.parseInt(comp.next());
-      int m=Integer.parseInt(comp.next());
-      int t=Integer.parseInt(comp.next());
+
+      File f = new File(filename);
+      Scanner s = new Scanner(f);
+      String str=s.nextLine();
+      int n=s.nextInt();
+      int m=s.nextInt();
+      int t=s.nextInt();
       int[][] nums= new int[n][m];
       int[][] sums=new int[n][m];
       char[][] doc = new char[n][m];
-      for(int i =0;i<doc.length;i++){
-        str=comp.next();
-        for(int l=0;l<doc[0].length;l++){
-          doc[i][l]=str.charAt(l);
+      for(int i =0;i<n;i++){
+        String x =s.next();
+        System.out.println(n);
+        System.out.println(m);
+        System.out.println(t);
+        System.out.println(x);
+        for(int l=0;l<m;l++){
+          doc[i][l]=x.charAt(l);
         }
       }
-      int sR = Integer.parseInt(comp.next()) - 1;
-      int sC = Integer.parseInt(comp.next()) - 1;
-      int eR = Integer.parseInt(comp.next()) - 1;
-      int eC = Integer.parseInt(comp.next()) - 1;
+      int sR = Integer.parseInt(s.next()) - 1;
+      int sC = Integer.parseInt(s.next()) - 1;
+      int eR = Integer.parseInt(s.next()) - 1;
+      int eC = Integer.parseInt(s.next()) - 1;
 
       int[][] moves = {{1, 0},{-1, 0},{0, 1},{0, -1}};
 
