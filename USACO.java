@@ -21,12 +21,12 @@ public class USACO{
       R = assign[0];
       C = assign[1];
       E = assign[2];
-      N = asign[3];
+      N = assign[3];
 
-    int[][] board=new int[R][C]
+    int[][] board=new int[R][C];
     for (int i=0;i<R;i++){
       for (int l=0;l< C;l++){
-        board[i]l=Integer.parseInt(input.next());
+        board[i]l=Integer.parseInt(comp.next());
       }
     }
     int m=0;
@@ -70,6 +70,7 @@ public class USACO{
   }
   }
 
+/*
   public static int silver(String filename){
     try{
       String str="";
@@ -137,7 +138,7 @@ public class USACO{
     }
 
     return 0;
-  }
+  }*/
 
 
 
