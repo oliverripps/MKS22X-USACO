@@ -101,6 +101,23 @@ public class USACO{
         }
       }
 
+      while (t > 1){
+        for (int i=0;i<n;i++){
+          for (int j=0;j<m;j++){
+            int nextTo=0;
+            for (int l=0; l< 4; l++){
+              int r = i + moves[l][0];
+              int c = l + moves[l][1];
+              if (r >= 0 && r < n && c >= 0 && c < m && doc[r][c] != '.'){
+                nextTo+= doc[r][c];
+              }
+            }
+            if (doc[i][j] != '.'){
+              sums[i][j] = nextTo;
+            }
+          }
+        }
+
 
 
 
