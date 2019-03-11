@@ -81,10 +81,7 @@ public class USACO{
       int[][] doc = new int[n][m];
       for(int i =0;i<n;i++){
         String x = s.nextLine();
-        /*System.out.println(n);
-        System.out.println(m);
-        System.out.println(t);
-        System.out.println(x);*/
+
         for(int l=0;l<m;l++){
           ch=x.charAt(l);
           if(ch=='.'){
@@ -97,34 +94,20 @@ public class USACO{
       }
     }
 
-      int[][] nums= new int[n][m];
-      int[][] sums= new int[n][m];
 
       int sR = Integer.parseInt(s.next())-1;
       int sC = Integer.parseInt(s.next())-1 ;
       int eR = Integer.parseInt(s.next()) -1;
       int eC = Integer.parseInt(s.next())-1;
       doc[sR][sC]=1;
+      int[][] moves = {{1, 0},{-1, 0},{0, 1},{0, -1}};
 
-      for(int i=0;i<4;i++){
-        int r= sR+moves[i][0];
-        int c=sC+moves[i][1];
-        if(r>=0 && r< n && c>=0 && c<m && doc[r][c]!=-1){
-          nums[r][c]=1;
-          sums[r][c]=1;
-        }
+    for(int k=0;k<t;k++){
+        doc=move(doc);
+
       }
-      //System.out.println("hi");
-      while(t > 1){
-        move(nums);
-      for(int i=0; i<n;i++){
-          for (int l=0; l < m; l++){
-            nums[i][l] = sums[i][l];
-          }
-        }
-        t--;
-      }
-      return sums[eR][eC];
+
+      return doc[eR][eC];
     }
     catch(FileNotFoundException e){
       System.out.println("File Not Found:" + filename);
@@ -140,7 +123,7 @@ public class USACO{
     for(int i=0;i<n;i++){
       for (int j=0;j<m;j++){
         if(nums[i][j]==-1){
-          sums[i][j]=-1
+          sums[i][j]=-1;
         }
         else{
         int nextTo=0;
@@ -148,7 +131,7 @@ public class USACO{
           int r = i + moves[l][0];
           int c = l + moves[l][1];
           if (r >= 0 && r <n && c >= 0 && c < m && nums[r][c] != -1){
-            nextTo+=sums[r][c];
+            nextTo+=nums[r][c];
           }
         }
         sums[i][j]=nextTo;
@@ -158,8 +141,3 @@ public class USACO{
   return sums;
 }
   }
-
-
-
-
-}
