@@ -73,12 +73,10 @@ public class USACO{
       //System.out.println(filename);
       File f = new File(filename);
       Scanner s = new Scanner(f);
-      String str=s.nextLine();
-      System.out.println(str);
-      List<String> eachnum = Arrays.asList(str.split(" "));
-      int n = Integer.parseInt(eachnum.get(0));
-      int m = Integer.parseInt(eachnum.get(1));
-      int t = Integer.parseInt(eachnum.get(2));
+      int n = s.nextInt();
+      int m = s.nextInt();
+      int t = s.nextInt();
+      s.nextLine();
       char[][] doc = new char[n][m];
       for(int i =0;i<n;i++){
         String x = s.nextLine();
@@ -88,6 +86,7 @@ public class USACO{
         System.out.println(x);*/
         for(int l=0;l<m;l++){
           doc[i][l]=x.charAt(l);
+          //System.out.println(doc[i][l]);
         }
       }
       int[][] nums= new int[n][m];
@@ -103,7 +102,7 @@ public class USACO{
       for(int i=0;i<4;i++){
         int r= sR+moves[i][0];
         int c=sC+moves[i][1];
-        if(r>=0 && r< n && c>=0 && c<m && doc[r][c]!='.'){
+        if(r>=0 && r< n && c>=0 && c<m && doc[r][c]!='*'){
           nums[r][c]=1;
           sums[r][c]=1;
         }
@@ -116,12 +115,12 @@ public class USACO{
             for (int l=0; l< 4; l++){
               int r = i + moves[l][0];
               int c = l + moves[l][1];
-              if (r >= 0 && r < n && c >= 0 && c < m && doc[r][c] != '.'){
-                nextTo+= doc[r][c];
+              if (r >= 0 && r < n && c >= 0 && c < m && doc[r][c] != '*'){
+                nextTo+=doc[r][c];
               }
             }
-            if (doc[i][j] != '.'){
-              sums[i][j] = nextTo;
+            if (doc[i][j] != '*'){
+              sums[i][j]+= nextTo;
             }
           }
         }
