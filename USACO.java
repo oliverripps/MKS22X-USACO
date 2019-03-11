@@ -69,8 +69,7 @@ public class USACO{
 
 
   public static int silver(String filename) throws FileNotFoundException{
-    try{
-      //System.out.println(filename);
+
       File f = new File(filename);
       Scanner s = new Scanner(f);
       char ch;
@@ -108,12 +107,8 @@ public class USACO{
       }
 
       return doc[eR][eC];
-    }
-    catch(FileNotFoundException e){
-      System.out.println("File Not Found:" + filename);
-    }
+    
 
-    return -1;
   }
   public static int[][] move(int[][] nums){
     int[][] moves = {{1, 0},{-1, 0},{0, 1},{0, -1}};
