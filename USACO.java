@@ -101,8 +101,8 @@ public class USACO{
         }
       }
 
-      while (t > 1){
-        for (int i=0;i<n;i++){
+      while(t > 1){
+        for(int i=0;i<n;i++){
           for (int j=0;j<m;j++){
             int nextTo=0;
             for (int l=0; l< 4; l++){
@@ -117,17 +117,21 @@ public class USACO{
             }
           }
         }
-
-
-
-
+      for(int i=0; i<n;i++){
+          for (int l=0; l < m; l++){
+            doc[i][l] = sums[i][l];
+          }
+        }
+        t--;
+      }
+      return doc[eR][eC];
     }
     catch(FileNotFoundException e){
       System.out.println("File Not Found:" + filename);
     }
 
-    return 0;
-  }*/
+    return -1;
+  }
 
 
 
